@@ -1,9 +1,9 @@
-package com.sbondar.leetcode;
+package com.sbondar.leetcode.binarySearch;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class WoodCutBSTest {
 
@@ -17,7 +17,7 @@ class WoodCutBSTest {
     @Test
     void test1() {
         //given
-        int[] logs = new int[] {10, 2, 4};
+        int[] logs = new int[]{10, 2, 4};
         int k = 3;
 
         //when
@@ -30,7 +30,7 @@ class WoodCutBSTest {
     @Test
     void test2() {
         //given
-        int[] logs = new int[] {232, 124, 456};
+        int[] logs = new int[]{232, 124, 456};
         int k = 7;
 
         //when
@@ -43,7 +43,7 @@ class WoodCutBSTest {
     @Test
     void test3() {
         //given
-        int[] logs = new int[] {1, 2, 3};
+        int[] logs = new int[]{1, 2, 3};
         int k = 7;
 
         //when
