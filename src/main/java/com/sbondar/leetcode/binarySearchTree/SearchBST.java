@@ -6,8 +6,6 @@ package com.sbondar.leetcode.binarySearchTree;
 //Find the node in the BST that the node's value equals val and return the subtree rooted with that node.
 // If such a node does not exist, return null.
 
-import java.util.ArrayDeque;
-
 class SearchBST {
 
     public TreeNode searchBST(TreeNode root, int val) {
@@ -30,29 +28,14 @@ class SearchBST {
         if (root.val == val) {
             return root;
         }
-        ArrayDeque<TreeNode> stack = new ArrayDeque<>();
-        stack.push(root);
-        TreeNode current = root;
-        boolean goLeft = true;
-        while (!stack.isEmpty()) {
-            if (goLeft) {
-                while(current.left != null) {
-                    stack.push(current);
-                    current = current.left;
-                    if (current.val == val) {
-                        return current;
-                    }
-                }
-            }
-            if (current.right != null) {
-                current = current.right;
-                if (current.val == val) {
-                    return current;
-                }
-                goLeft = true;
+        TreeNode cur = root;
+        while (cur != null) {
+            if (cur.val > val) {
+                cur = cur.left;
+            } else if (cur.val < val) {
+                cur = cur.right;
             } else {
-                current = stack.pop();
-                goLeft = false;
+                return cur;
             }
         }
         return null;
@@ -62,18 +45,5 @@ class SearchBST {
         int val;
         TreeNode left;
         TreeNode right;
-
-        TreeNode() {
-        }
-
-        TreeNode(int val) {
-            this.val = val;
-        }
-
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
     }
 }
