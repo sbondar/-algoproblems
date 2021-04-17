@@ -53,18 +53,16 @@ class LowestCommonAncestorBST {
         Node ans = lca(root,v1,v2);
         System.out.println(ans.data);
     }
-
-    static class Node {
-        Node left;
-        Node right;
-        int data;
-
-        Node(int data) {
-            this.data = data;
-            left = null;
-            right = null;
-        }
-    }
 }
 
+class Node {
+    Node left;
+    Node right;
+    int data;
 
+    Node(int data) {
+        this.data = data;
+        left = null;
+        right = null;
+    }
+}

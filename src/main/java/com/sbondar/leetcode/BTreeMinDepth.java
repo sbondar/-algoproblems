@@ -1,4 +1,4 @@
-package com.sbondar.leetcode.binarySearchTree;
+package com.sbondar.leetcode;
 
 import java.util.LinkedList;
 import java.util.Queue;

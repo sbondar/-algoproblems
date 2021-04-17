@@ -1,11 +1,10 @@
-package com.sbondar.leetcode.binarySearch;
+package com.sbondar.leetcode;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
-//TODO: bsv: add more tests
 class SearchForRangeBSTest {
 
     private SearchForRangeBS search;
@@ -18,13 +17,13 @@ class SearchForRangeBSTest {
     @Test
     void searchForRange() {
         //given
-        int[] nums = new int[]{5, 7, 7, 8, 8, 10};
+        int[] nums = new int[] {5,7,7,8,8,10};
         int target = 8;
 
         //when
         int[] result = search.searchForRange(nums, target);
 
         //then
-        assertArrayEquals(new int[]{3, 4}, result);
+        assertArrayEquals(new int[] {3,4}, result);
     }
 }

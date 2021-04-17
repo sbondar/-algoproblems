@@ -1,4 +1,4 @@
-package com.sbondar.leetcode.binarySearch;
+package com.sbondar.leetcode;
 
 import java.util.Scanner;
 
