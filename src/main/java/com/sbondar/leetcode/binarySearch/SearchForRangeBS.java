@@ -1,4 +1,4 @@
-package com.sbondar.leetcode;
+package com.sbondar.leetcode.binarySearch;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -60,7 +60,7 @@ public class SearchForRangeBS {
                 r = i;
             }
         }
-        if (targedInx < nums.length - 1 && nums[targedInx + 1] == target) {
+        if (targedInx < nums.length - 1 && nums[targedInx + 1] == target) {//case when [1, 4], target == 4; template = 3, 2 more candidates
             targedInx++;
         }
         if (nums[targedInx] != target) {
@@ -81,3 +81,6 @@ public class SearchForRangeBS {
     }
 
 }
+//Other alternative is to do regular binary search to find target. Once you find target walk to the left until its different than target. And do the same on right side.
+// Time complexity is O(log(n) + k) where k is the number of occurrence of a target
+//Time complexity should be Log2n instead of log10n. Since we are dividing each time into half, this should be log with base 2.

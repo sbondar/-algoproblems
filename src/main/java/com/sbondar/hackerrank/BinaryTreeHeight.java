@@ -115,4 +115,16 @@ class BinaryTreeHeight {
         int height = height(root);
         System.out.println(height);
     }
+
+    static class Node {
+        Node left;
+        Node right;
+        int data;
+
+        Node(int data) {
+            this.data = data;
+            left = null;
+            right = null;
+        }
+    }
 }

@@ -1,0 +1,115 @@
+Scanner s = new Scanner(System.in);
+int n = s.nextInt();
+
+        Arrays.stream(a).boxed().collect(Collectors.toList());
+        Arrays.stream(a).boxed().collect(Collectors.toCollection(LinkedList::new));
+
+what to use as Stack: LinkedList?  Deque??
+        SonarLint: Replace the synchronized class "Stack" by an unsynchronized one such as "Deque". ???
+
+                for (char c : s.toCharArray()) {
+
+ PriorityQueue<Integer> sorted = new PriorityQueue<>(Comparator.reverseOrder());
+ Queue<String> queue = new LinkedList<>();
+ Queue.add(e), offer
+ Queue.remove() (exc), poll (null) // remove first
+ Queue.element(), peek
+
+ArrayDeque<Integer> stack = new ArrayDeque<>()//push, remove
+This class is likely to be faster than Stack when used as a stack, and faster than LinkedList when used as a queue.
+
+All Queues which are available in java.util package are Unbounded Queues and Queues which are available in java.util.concurrent package are Bounded Queues.
+======
+long days = l + (distance / 2 + (distance % 2 == 0 ? 0 : 1));// round up longs
+======
+" n <= 10^5 is the constraint. Which means that our algorithm can be O(n logn)
+Usually for competitive coding problems, the time limit is around 1 second and you can safely assume that you can perform 10^8 to 10^9 operations within that time. So when the constraint
+is given as n <= 10^5, it serves to us as a hint that any O(nlogn) algorithm will suffice. Similarly, n <= 10^4 usually implies quadratic runtime and n <= 10^9 implies that a linear
+runtime is required. Of course, the constants also come into play, but these serve as a general guidline for most problems.
+======
+BSearch -     //почему так быстрее, ведь я пересчитываю по половинкам все время заново??
+MinTimeProductionBS - не испть TreeMap - лишняя оптимизация, менее читабельный код - оперировать простыми массивами
+Time complexity : O(log_2 n). Binary Search is used.
+Space complexity : O(1). No extra space is used.
+It seems that Ternary Search is able to terminate earlier compared to binary search. But why is binary search more widely used?
+Comparisons between Binary Search and Ternary Search
+Ternary Search is worse than Binary Search. The following outlines the recursive formula to count comparisons of Binary Search in the worst case.
+Ternary Search does more comparisons than Binary Search in the worst case.
+=======
+это вставка для Binary Search Tree (BTree - only rule: 0,1,2 kids). When BST: left subtree of a node has nodes which are only lesser than that node’s key., the same for right, no duplicates, keys are distinct
+  TreeBFS
+    public static Node insert(Node root, int data) {//выучить
+        if (root == null) {
+            return new Node(data);
+        } else {
+            Node cur;
+            if (data <= root.data) {
+                cur = insert(root.left, data);
+                root.left = cur;
+            } else {
+                cur = insert(root.right, data);
+                root.right = cur;
+            }
+            return root;
+        }
+    }
+
+
+
+=======
+java9 and up
+// this works for up to 10 elements:
+Map<String, String> test1 = Map.of(
+    "a", "b",
+    "c", "d"
+);
+
+// this works for any number of elements:
+import static java.util.Map.entry;
+Map<String, String> test2 = Map.ofEntries(
+    entry("a", "b"),
+    entry("c", "d")
+);
+======
+
+Largest Number!
+
+Question: Given a list of digits from 0 - 9, return the largest number. Assume that this number is small enough to fit in memory.
+
+Input: [0, 1, 1, 9]
+Output: 9110
+
+Input: [3, 1, 8, 0]
+Output: 8310
+
+========
+Sort List of Words
+
+Given a list of words and an ordering, return true or false if the list is in the correct alphabetical order
+
+Example 1:
+words: ["cc", "cb", "ca", "bc", "ab"]
+ordering = ["c", "b", "a"]
+Output: True
+
+Example 2:
+Words: ["ca", "cb", "cc", "bc", "ab"]
+ordering = ["c", "b", "a"]
+output = False
+
+Example 3:
+Words: ["cc", "cb", "ca", "bccc", "bca"]
+ordering = ["c", "b", "a"]
+output = True
+
+Example 4:
+Words = ["cc", "cb", "ca", "bca", "bccc"]
+Ordering = ["c", "b", "a"]
+Output = False
+
+Example 5:
+Words = ["cc", "cb", "bca", "bcac"]
+ordering = ["c", "b", "a"]
+output = True
+
+

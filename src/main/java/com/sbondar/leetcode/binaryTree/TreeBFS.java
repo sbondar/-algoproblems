@@ -1,34 +1,35 @@
-package com.sbondar.hackerrank;
+package com.sbondar.leetcode.binaryTree;
 
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.Scanner;
 
-//https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/problem
+class TreeBFS {
 
-class LowestCommonAncestorBST {
-
-    public static Node lca(Node root, int v1, int v2) {
-        int min = Math.min(v1, v2);
-        int max = Math.max(v1, v2);
-        Node current = root;
-        while (current != null) {
-            if (min <= current.data && current.data <= max) {
-                return current;
-            }
-            if (min > current.data) {
-                current = current.right;
+    public static Node doBFS(Node root, int value) {
+        ArrayDeque<Node> q = new ArrayDeque<>();
+        q.add(root);
+        while (!q.isEmpty()) {
+            Node first = q.poll();
+            if (first.data == value) {
+                return first;
             } else {
-                current = current.left;
+                if (first.left != null) {
+                    q.add(first.left);
+                }
+                if (first.right != null) {
+                    q.add(first.right);
+                }
             }
         }
         return null;
     }
 
     public static Node insert(Node root, int data) {
-        if(root == null) {
+        if (root == null) {
             return new Node(data);
         } else {
             Node cur;
-            if(data <= root.data) {
+            if (data <= root.data) {
                 cur = insert(root.left, data);
                 root.left = cur;
             } else {
@@ -43,14 +44,13 @@ class LowestCommonAncestorBST {
         Scanner scan = new Scanner(System.in);
         int t = scan.nextInt();
         Node root = null;
-        while(t-- > 0) {
+        while (t-- > 0) {
             int data = scan.nextInt();
             root = insert(root, data);
         }
-        int v1 = scan.nextInt();
-        int v2 = scan.nextInt();
+        int value = scan.nextInt();
         scan.close();
-        Node ans = lca(root,v1,v2);
+        Node ans = doBFS(root, value);
         System.out.println(ans.data);
     }
 
@@ -66,5 +66,3 @@ class LowestCommonAncestorBST {
         }
     }
 }
-
-

@@ -2,8 +2,19 @@ package com.sbondar.hackerrank;
 
 import java.util.*;
 
-
 //https://www.hackerrank.com/challenges/balanced-brackets/problem
+/*
+1
+{[(])}
+
+1
+}}}
+
+3
+{[()]}
+{[(])}
+{{[[(())]]}}
+* */
 
 public class BalancedBrackets {
     public static void main(String[] args) {
@@ -39,16 +50,3 @@ public class BalancedBrackets {
         return openBr.isEmpty() ? "YES" : "NO";
     }
 }
-
-/*
-1
-{[(])}
-
-1
-}}}
-
-3
-{[()]}
-{[(])}
-{{[[(())]]}}
-* */

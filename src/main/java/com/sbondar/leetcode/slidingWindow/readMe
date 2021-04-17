@@ -1,0 +1,28 @@
+The sliding window technique is a methodology of solving a problem that involves using two pointers or creating a "window" to optimize the solution. This technique is often used in replacement of the brute force approach of finding all possible sequences to solve the problem which is quadratic time complexity O(N^2).
+There are several strategies we'll discuss to help us identify whether we can use the sliding window technique:
+1/ Input is an ordered, traversable collection
+2/ Sequence of input matters
+3/ We want to find the longest, maximum, or minimum of something within the input
+4/ We need two pointers to create a "window" to keep track of our solution
+
+//solve in class: Given a string s, find the length of the longest substring without repeating characters.
+article: https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66#:~:text=Sliding%20Window%20problems%20are%20a,solving%20tabulation%20or%20memoization%20problems.
+
+More tasks:
+easy
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
+https://leetcode.com/problems/maximum-subarray/
+https://leetcode.com/problems/max-consecutive-ones/
+
+medium
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
+https://leetcode.com/problems/longest-substring-without-repeating-characters/
+https://leetcode.com/problems/maximum-erasure-value/
+
+
+hard
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/
+https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/
+https://leetcode.com/problems/minimum-number-of-k-consecutive-bit-flips/
+https://leetcode.com/problems/minimum-window-substring/
+https://leetcode.com/problems/subarrays-with-k-different-integers/
